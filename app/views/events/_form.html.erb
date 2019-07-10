@@ -1,0 +1,38 @@
+<%= form_with(model: @event, local: true) do |form| %>
+    <% if @event.errors.any? %>
+      <h2><%= @event.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  
+    <%= form.label :name %>
+    <%= form.text_field :name %><br>
+      
+    <%= form.label :kind %>
+    <%= form.select :kind, ['イベント','予約'] %><br>
+  
+    <%= form.label :start_on %>
+    <%= form.datetime_field :start_on %><br>
+  
+    <%= form.label :price %>
+    <%= form.text_field :price %><br>
+  
+    <%= form.label :game %>
+    <%= form.text_field :game %><br>
+  
+    <%= form.label :lane %>
+    <%= form.text_field :lane %><br>
+  
+    <%= form.label :remarks %>
+    <%= form.text_area :remarks %><br>
+  
+    <%= form.label :image %>
+    <%= form.text_area :image %><br>
+      
+    <%= form.submit %>
+  <% end %>
+  
+  <%= link_to 'イベント一覧', events_path %>

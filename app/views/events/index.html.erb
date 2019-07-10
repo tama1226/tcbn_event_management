@@ -1,0 +1,31 @@
+<h1>イベント一覧画面</h1>
+
+<p><%= notice %></p>
+
+<table>
+  <tr>
+    <th>番号</th>
+    <th>イベント名</th>
+    <th>種類</th>
+    <th>開催日時</th>
+    <th>料金</th>
+    <th>レーン数</th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+    <td><%= event.id %></td>
+    <td><%= event.name %></td>
+    <td><%= event.kind %></td>
+    <td><%= event.start_on %></td>
+    <td><%= event.price %></td>
+    <td><%= event.lane %></td>
+
+    <td><%= link_to '詳細', event_path(event.id) %></td>
+    <td><%= link_to "編集", edit_event_path(event.id) %></td>
+    <td><%= link_to '削除', event_path(event.id), method: :delete, data: { confirm: '削除していいですか？' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to '新規イベント登録', new_event_path %>

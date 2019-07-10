@@ -1,0 +1,12 @@
+<h1>イベント詳細画面</h1>
+
+<p>イベント名: <%= @event.name %></p>
+<p>種類: <%= @event.kind %></p>
+<p>開催日時: <%= @event.start_on %></p>
+<p>料金: <%= @event.price %></p>
+<p>ゲーム数: <%= @event.game %></p>
+<p>レーン数: <%= @event.lane %></p>
+<p>備考: <%= @event.remarks %></p>
+<p>画像: <%= @event.image %></p>
+
+<%= link_to 'イベント一覧', events_path %>
