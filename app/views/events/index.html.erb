@@ -2,7 +2,18 @@
 
 <p><%= notice %></p>
 
-<%= paginate @events%>
+<h2>検索フォーム</h2>
+<%= search_form_for @search, url: events_path do |f|%>
+  <%= f.label :name_cont, 'イベント名' %>
+  <%= f.search_field :name_cont %>
+
+  <%= f.label :start_on_eq, '日付' %>
+  <%= f.date_field :start_on_eq %>
+
+  <%= f.submit '検索' %>
+<% end %>
+
+<br>
 
 <table>
   <tr>
@@ -33,5 +44,11 @@
   </tr>
 <% end %>
 </table>
+
+<br>
+
+<%= paginate @events %>
+
+<br>
 
 <%= link_to '新規イベント登録', new_event_path %>
