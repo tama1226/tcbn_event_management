@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      event: イベント
+    attributes:
+      event:
+        name: イベント名
+        kind: 種類
+        start_on: 開催日付
+        price: 料金
+        game: ゲーム数
+        lane: レーン数
+        remarks: 備考
+        image: 画像
