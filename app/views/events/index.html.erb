@@ -2,12 +2,27 @@
 
 <p><%= notice %></p>
 
+<h2>検索フォーム</h2>
+<%= search_form_for @search, url: events_path do |f|%>
+  <%= f.label :name_cont, 'イベント名' %>
+  <%= f.search_field :name_cont %>
+
+  <%= f.label :start_on_eq, '日付' %>
+  <%= f.date_field :start_on_eq %>
+
+  <%= f.submit '検索' %>
+<% end %>
+
+<br>
+
 <table>
   <tr>
     <th>番号</th>
     <th>イベント名</th>
     <th>種類</th>
-    <th>開催日時</th>
+    <th>日付</th>
+    <th>曜日</th>
+    <th>開催時間</th>
     <th>料金</th>
     <th>レーン数</th>
   </tr>
@@ -17,7 +32,9 @@
     <td><%= event.id %></td>
     <td><%= event.name %></td>
     <td><%= event.kind %></td>
-    <td><%= event.start_on %></td>
+    <td><%= event.start_on.strftime('%Y年%m月%d日') %></td>
+    <td><%= event.start_on.strftime('%a') %></td>
+    <td><%= event.start_on.strftime('%H時%M分') %></td>
     <td><%= event.price %></td>
     <td><%= event.lane %></td>
 
@@ -28,4 +45,14 @@
 <% end %>
 </table>
 
+<br>
+
+<%= paginate @events %>
+
+<br>
+
 <%= link_to '新規イベント登録', new_event_path %>
+
+<br>
+
+<div id="calendar"></div>
