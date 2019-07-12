@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only:[:show,:edit,:update,:destroy]
+  #ログインしていなければ、イベント登録不可
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @search = Event.ransack(params[:q])

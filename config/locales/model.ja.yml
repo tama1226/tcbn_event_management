@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       event: イベント
+      user: ユーザー
     attributes:
       event:
         name: イベント名
@@ -12,3 +13,10 @@ ja:
         lane: レーン数
         remarks: 備考
         image: 画像
+      user:
+        name: "名前"
+        email: "メールアドレス"
+        current_password: "現在のパスワード"
+        password: "パスワード"
+        password_confirmation: "確認用パスワード"
+        remember_me: "ログインを記憶"
