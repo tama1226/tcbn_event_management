@@ -13,11 +13,13 @@
 //= require rails-ujs
 //= require activestorage
 
+//= require jquery/dist/jquery.js
 //= require_tree .
 //= require jquery
 //= require moment
 //= require fullcalendar
 //= require fullcalendar/lang/ja
+//= require bootstrap/dist/js/bootstrap.min
 
 <!-- TurbolinksによってjQueryが呼び出されないようにするため、一部表記を削除 -->
 
