@@ -21,6 +21,7 @@ gem 'momentjs-rails'
 gem 'devise'
 gem 'rails_admin', '~> 2.0.0.beta'
 gem 'cancancan'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
