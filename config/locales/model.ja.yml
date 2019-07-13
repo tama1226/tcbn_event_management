@@ -3,6 +3,7 @@ ja:
     models:
       event: イベント
       user: ユーザー
+      contact: お問い合わせ
     attributes:
       event:
         name: イベント名
@@ -20,3 +21,16 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+      contact:
+        reserved_name: "予約名"
+        name: "代表者名"
+        phone_number: "電話番号"
+        email: "メールアドレス"
+        reserved_on: "予約日"
+        game: "ゲーム数"
+        utilization_at: "利用時間"
+        number_of_people: "人数"
+        lane: "レーン数"
+        bus: "バスの利用"
+        meeting_room: "ミーティングルームの利用"
+        remarks: "備考"

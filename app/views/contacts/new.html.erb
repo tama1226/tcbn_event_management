@@ -1,0 +1,17 @@
+<%= simple_form_for(@contact) do |f| %>
+  <h2>予約お問い合わせフォーム</h2><br>
+  <%= f.input :reserved_name, label: "ご予約名", placeholder: "20文字以内" %>
+  <%= f.input :name, label: "代表者名", placeholder: "20文字以内"%>
+  <%= f.input :phone_number, label: "お電話番号" %>
+  <%= f.input :email, label: "メールアドレス" %>
+  <%= f.input :reserved_on, label: "ご予約日" %>
+  <%= f.input :game, label: "ゲーム数" %>
+  <%= f.input :utilization_at, label: "ご利用時間" %>
+  <%= f.input :number_of_people, label: "人数" %>
+  <%= f.input :lane, label: "レーン数" %>
+  <%= f.input :bus, label: "バスのご利用" %>
+  <%= f.input :meeting_room, label: "ミーティングルームのご利用" %>
+  <%= f.input :remarks, label: "備考" %>
+
+  <%= f.button :submit, :class => "btn-primary" %>
+<% end %>

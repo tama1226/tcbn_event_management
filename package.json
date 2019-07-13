@@ -1,5 +1,8 @@
 {
   "name": "tcbn_event_management",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1"
+  }
 }
