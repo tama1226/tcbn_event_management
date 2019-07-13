@@ -2,7 +2,7 @@
   
   <h2>予約お問い合わせフォーム</h2><br>
 
-  <%= f.input :reserved_name, label: "ご予約名", placeholder: "20文字以内" %><br>
+  <%= f.input :reserved_name, label: "ご予約名", placeholder: "30文字以内" %><br>
 
   <%= f.input :name, label: "代表者名", placeholder: "20文字以内" %><br>
 
@@ -16,11 +16,11 @@
 
   <%= f.input :utilization_at, label: "ご利用時間", as: :select, collection: [ [' ', ' '],['90', '90'],[ '120', '120'] ], selected: ' ' %><br>
 
-  <%= f.input :number_of_people, label: "人数", placeholder: "数字を入力してください" %><br>
+  <%= f.input :number_of_people, label: "人数", placeholder: "半角数字で入力してください" %><br>
 
-  <%= f.input :lane, label: "レーン数", placeholder: "数字を入力してください（最大36レーン）" %><br>
+  <%= f.input :lane, label: "レーン数", placeholder: "半角数字で入力してください（最大36レーン）" %><br>
 
-  <%= f.input :bus, label: "バスのご利用" %><br>
+  <%= f.input :bus, label: "バスのご利用（最大乗車人数28名）" %><br>
 
   <%= f.input :meeting_room, label: "ミーティングルームのご利用" %><br>
 
