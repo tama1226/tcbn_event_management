@@ -12,7 +12,7 @@
 //
 //= require rails-ujs
 //= require activestorage
-
+//= require turbolinks
 //= require jquery/dist/jquery.js
 //= require_tree .
 //= require jquery
@@ -21,33 +21,16 @@
 //= require fullcalendar/lang/ja
 //= require bootstrap/dist/js/bootstrap.min
 
-<!-- TurbolinksによってjQueryが呼び出されないようにするため、一部表記を削除 -->
-
 $(function () {
-  function eventCalendar() {
-      return $('#calendar').fullCalendar({});
-  };
-  function clearCalendar() {
-      $('#calendar').html('');
-  };
-  
-  $(document).on('turbolinks:load', function () {
-  eventCalendar();
-  });
-  $(document).on('turbolinks:before-cache', clearCalendar);
-
-  $('#calendar').fullCalendar({
-  events: '/events.json'
+  $(document).ready(function(){
+    $('#calendar').fullCalendar({
+      events: '/events.json',
+      header: {
+        left: 'prev, next, today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay,listMonth'
+      }
+    });
   });
 });
 
-
-$(document).ready(function(){
-  $('#calendar').fullCalendar({
-    header: {
-      left: 'prev, next, today',
-      center: 'title',
-      right: 'month, agendaWeek, agendaDay, listMonth'
-    }
-  });
-});
