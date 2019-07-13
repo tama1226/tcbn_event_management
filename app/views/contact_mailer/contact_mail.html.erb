@@ -14,8 +14,8 @@
 <h3>ご利用時間 : <%= @contact.utilization_at %>分</h3>
 <h3>人数 : <%= @contact.number_of_people %>人</h3>
 <h3>レーン数 : <%= @contact.lane %>レーン</h3>
-<h3>バスのご利用 : <%= @contact.bus %></h3>
-<h3>ミーティングルームのご利用 : <%= @contact.meeting_room %></h3>
+<h3>バスのご利用 : <%= @contact.bus ? '有り' : '無し' %></h3>
+<h3>ミーティングルームのご利用 : <%= @contact.meeting_room ? '有り' : '無し' %></h3>
 <h3>備考 : <%= @contact.remarks %></h3>
 
 <h2>以上となります。引き続きよろしくお願いいたします</h2>
