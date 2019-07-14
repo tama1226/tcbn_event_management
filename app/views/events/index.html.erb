@@ -17,7 +17,6 @@
 
 <table>
   <tr>
-    <th>番号</th>
     <th>イベント名</th>
     <th>種類</th>
     <th>日付</th>
@@ -29,16 +28,14 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= event.id %></td>
     <td><%= event.name %></td>
     <td><%= event.kind %></td>
     <td><%= event.start_on.strftime('%Y年%m月%d日') %></td>
     <td><%= event.start_on.strftime('%a') %></td>
     <td><%= event.start_on.strftime('%H時%M分') %></td>
-    <td><%= event.price %></td>
-    <td><%= event.lane %></td>
+    <td><%= event.price %>円</td>
+    <td><%= event.lane %>レーン</td>
 
-    <td><%= link_to '詳細', event_path(event.id) %></td>
     <td><%= link_to "編集", edit_event_path(event.id) %></td>
     <td><%= link_to '削除', event_path(event.id), method: :delete, data: { confirm: '削除していいですか？' } %></td>
   </tr>

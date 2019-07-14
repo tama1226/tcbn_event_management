@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   def index
     @search = Event.ransack(params[:q])
-    @events = @search.result.order(:start_on).page(params[:page]).per(3)
+    @events = @search.result.order(:start_on).page(params[:page]).per(5)
   end
 
   def show

@@ -9,7 +9,7 @@
     <% end %>
   
     <%= form.label :name %>
-    <%= form.text_field :name %><br>
+    <%= form.text_field :name , placeholder: "30文字以内"%><br>
       
     <%= form.label :kind %>
     <%= form.select :kind, ['イベント','予約'] %><br>
@@ -18,19 +18,19 @@
     <%= form.datetime_field :start_on %><br>
   
     <%= form.label :price %>
-    <%= form.text_field :price %><br>
+    <%= form.text_field :price , placeholder: "半角数字で入力"%><br>
   
     <%= form.label :game %>
-    <%= form.text_field :game %><br>
+    <%= form.select :game, [' ','1','2','3','4','5','6','7','8','9','10'] %><br>
   
     <%= form.label :lane %>
-    <%= form.text_field :lane %><br>
-  
-    <%= form.label :remarks %>
-    <%= form.text_area :remarks %><br>
+    <%= form.text_field :lane , placeholder: "最大36レーン"%><br>
   
     <%= form.label :image %>
     <%= form.text_area :image %><br>
+  
+    <%= form.label :remarks %>
+    <%= form.text_area :remarks, placeholder:"300文字以内" %><br>
       
     <%= form.submit %>
   <% end %>
