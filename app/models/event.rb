@@ -3,6 +3,11 @@ class Event < ApplicationRecord
   validates :kind, presence: true
   validates :start_on, presence: true
   validates :lane, presence: true
+
+  #simple_calendar
+  def start_time
+    self.start_on
+  end
   
   #datetime型のカラムをdateで日付検索可能にする
   ransacker :start_on do
