@@ -1,8 +1,13 @@
 class Event < ApplicationRecord
-  validates :name, presence: true, length: { in: 1..50 }
+  validates :name, presence: true, length: { in: 1..30 }
   validates :kind, presence: true
   validates :start_on, presence: true
-  validates :lane, presence: true
+  validates :price, presence: true,
+             format: { with: /\A[0-9]+\z/}
+  validates :game, presence: true
+  validates :lane, presence: true, numericality: {less_than_or_equal_to: 36},
+             format: { with: /\A[0-9]+\z/}
+  validates :remarks, length: { maximum: 300 }
 
   #simple_calendar
   def start_time
