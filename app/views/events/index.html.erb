@@ -55,4 +55,14 @@
 
 <br>
 
-<div id="calendar"></div>
+<%= month_calendar events: @events do |date, events| %>
+  <%= date %>
+
+  <% events.each do |event| %>
+    <div>
+    <%= link_to event.name, event_path(event.id) %>
+    <%= link_to event.start_on.strftime('%H時%M分'), event_path(event.id) %>
+    </div>
+  <% end %>
+<% end %>
+

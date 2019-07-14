@@ -15,22 +15,4 @@
 //= require turbolinks
 //= require jquery/dist/jquery.js
 //= require_tree .
-//= require jquery
-//= require moment
-//= require fullcalendar
-//= require fullcalendar/lang/ja
 //= require bootstrap/dist/js/bootstrap.min
-
-$(function () {
-  $(document).ready(function(){
-    $('#calendar').fullCalendar({
-      events: '/events.json',
-      header: {
-        left: 'prev, next, today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay,listMonth'
-      }
-    });
-  });
-});
-

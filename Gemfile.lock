@@ -97,10 +97,6 @@ GEM
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.11.1)
-    fullcalendar-rails (3.9.0.0)
-      jquery-rails (>= 4.0.5, < 5.0.0)
-      jquery-ui-rails (>= 5.0.2)
-      momentjs-rails (>= 2.9.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     haml (5.1.1)
@@ -153,8 +149,6 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    momentjs-rails (2.20.1)
-      railties (>= 3.1)
     msgpack (1.3.0)
     nested_form (0.3.2)
     nio4r (2.4.0)
@@ -242,6 +236,8 @@ GEM
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
+    simple_calendar (2.3.0)
+      rails (>= 3.0)
     simple_form (4.1.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -293,13 +289,10 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
-  fullcalendar-rails
   jbuilder (~> 2.5)
-  jquery-rails (= 4.3.3)
   kaminari
   letter_opener_web
   listen (>= 3.0.5, < 3.2)
-  momentjs-rails
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 3.11)
@@ -308,6 +301,7 @@ DEPENDENCIES
   ransack
   sass-rails (~> 5.0)
   selenium-webdriver
+  simple_calendar (~> 2.0)
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
