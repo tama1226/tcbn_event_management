@@ -11,6 +11,9 @@
 
   <body>
     <header>
+      <%= link_to "ご予約のお問い合わせはこちら", "/contacts/new"%>
+      <%= link_to 'イベント一覧', events_path %>
+      
       <% if user_signed_in?%>
         <%= link_to "管理画面", "/admin"%>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
@@ -22,8 +25,5 @@
 
       <%= yield %>
 
-    <footer>
-    <%= link_to "ご予約のお問い合わせはこちら", "/contacts/new"%>
-    </footer>
   </body>
 </html>
