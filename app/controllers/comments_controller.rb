@@ -1,11 +1,11 @@
 class CommentsController < ApplicationController
   def create
-    @event = Event.find(pramas[:evnet_id])
+    @event = Event.find(params[:event_id])
     @comment = @event.comments.build(comment_params)
 
     respond_to do |format|
       if @comment.save
-        format.js{render :index}
+        format.js {render:index}
       else
         format.html {redirect_to event_path(@event), notice:'投稿不可！'}
       end  

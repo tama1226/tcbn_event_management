@@ -11,4 +11,13 @@
 <p>備考: <%= @event.remarks %></p>
 <p>画像: <%= @event.image %></p>
 
-<%= link_to 'イベント一覧', events_path %>
+<p>コメント一覧</p>
+
+<div id="comment_area">
+  <%= render partial: 'comments/index', locals:{comments:@comments, event:@event} %>
+</div>
+
+  <%= render partial: 'comments/form', locals:{comment:@comment, event:@event} %>
+
+<%= link_to '編集', edit_event_path(@event)%>|
+<%= link_to '戻る', events_path %>
