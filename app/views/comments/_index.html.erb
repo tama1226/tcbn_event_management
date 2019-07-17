@@ -1,8 +1,8 @@
-<%= comments.each do |comment| %>
+<% comments.each do |comment| %>
   <% unless comment.id.nil? %>
     <p><%= "#{comment.user.name}さん" %></p>
 
-    <p>コメント：<%= comment.content %></p>
+    <p>コメント：<%= "#{comment.content}" %></p>
 
     <% if comment.user == current_user %>
       <p><%= link_to 'コメントを削除する', event_comment_path(comment.event_id, comment.id), method: :delete, remote: true %></p>
