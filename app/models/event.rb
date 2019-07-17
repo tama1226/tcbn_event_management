@@ -9,6 +9,9 @@ class Event < ApplicationRecord
              format: { with: /\A[0-9]+\z/}
   validates :remarks, length: { maximum: 300 }
 
+  belongs_to :user
+  has_many :comments, dependent: :destroy
+
   #simple_calendar
   def start_time
     self.start_on

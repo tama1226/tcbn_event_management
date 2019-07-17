@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   resource :contacts, only: [:new, :create]
   
-  resources :events
+  resources :events do
+    resources :comments
+  end
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

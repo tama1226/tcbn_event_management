@@ -1,14 +1,29 @@
-<h1>イベント詳細画面</h1>
+<div　class="container">
+  <div class="row">
+    <div class="col-sm-6 border">
+      <h1>イベント詳細画面</h1>
 
-<p>イベント名: <%= @event.name %></p>
-<p>種類: <%= @event.kind %></p>
-<p>日付:<%= @event.start_on.strftime('%Y年%m月%d日') %></p>
-<p>曜日:<%= @event.start_on.strftime('%a') %></p>
-<p>開催時間:<%= @event.start_on.strftime('%H時%M分') %></p>
-<p>料金: <%= @event.price %></p>
-<p>ゲーム数: <%= @event.game %></p>
-<p>レーン数: <%= @event.lane %></p>
-<p>備考: <%= @event.remarks %></p>
-<p>画像: <%= @event.image %></p>
+      <p>イベント名: <%= @event.name %></p>
+      <p>種類: <%= @event.kind %></p>
+      <p>日付:<%= @event.start_on.strftime('%Y年%m月%d日') %></p>
+      <p>曜日:<%= @event.start_on.strftime('%a') %></p>
+      <p>開催時間:<%= @event.start_on.strftime('%H時%M分') %></p>
+      <p>料金: <%= @event.price %></p>
+      <p>ゲーム数: <%= @event.game %></p>
+      <p>レーン数: <%= @event.lane %></p>
+      <p>備考: <%= @event.remarks %></p>
+      <p>画像: <%= @event.image %></p>
+    </div>
 
-<%= link_to 'イベント一覧', events_path %>
+    <div class="col-sm-6 border">
+      <h2>コメント一覧</h2>
+      <div id="comments_area">
+        <%= render partial: 'comments/index', locals: {comments: @comments} %>
+      </div>
+
+      <% if user_signed_in?%>
+        <%= render partial: 'comments/form', locals: {comment: @comment, event: @event} %>
+      <% end %>
+    </div>
+  </div>
+</div>
