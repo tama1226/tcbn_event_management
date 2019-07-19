@@ -16,6 +16,10 @@
  *= require_self
  */
 
+ header{
+     background-color: alpha($color: #000000);
+ }
+
  .main{
      height:700px;
      width:1500px;
