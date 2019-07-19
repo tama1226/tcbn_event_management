@@ -52,7 +52,8 @@ class EventsController < ApplicationController
                                   :game,
                                   :lane,
                                   :remarks,
-                                  :image)
+                                  :image,
+                                  :image_cache)
   end
 
   def set_event

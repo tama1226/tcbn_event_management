@@ -11,8 +11,14 @@
       <p>料金: <%= @event.price %></p>
       <p>ゲーム数: <%= @event.game %></p>
       <p>レーン数: <%= @event.lane %></p>
+      <p>画像: 
+        <% if @event.image.url.nil? %>
+          <%= image_tag 'no_image_default', size: '240x240' %>
+        <% else %>
+          <%= image_tag @event.image.url, size: '240x240' %>
+        <% end %>
+      </p>
       <p>備考: <%= @event.remarks %></p>
-      <p>画像: <%= @event.image %></p>
     </div>
 
     <div class="col-sm-6 border">

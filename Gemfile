@@ -20,6 +20,8 @@ gem 'rails_admin', '~> 2.0.0.beta'
 gem 'cancancan'
 gem 'simple_form'
 gem 'simple_calendar', '~> 2.0'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
