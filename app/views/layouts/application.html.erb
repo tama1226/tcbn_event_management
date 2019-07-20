@@ -12,9 +12,12 @@
   <body>
     <header>
       <img src='assets/タチバナロゴ.png'>
+
       <div class="float-right">
         <%= link_to 'イベント日程一覧', events_path, class: 'btn btn-info' %>
+
           <% if user_signed_in?%>
+            <%= link_to 'プロフィール', user_path(current_user.id), class: 'btn btn-success' %>
             <% if current_user.admin %>
               <%= link_to "スタッフ管理ページ", "/admin", class: 'btn btn-warning' %>
             <% else %>

@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+
   root  'events#toppage.html'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+  resources :users, only: [:show]
 
   resource :contacts, only: [:new, :create]
   
