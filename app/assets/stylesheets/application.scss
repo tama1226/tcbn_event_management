@@ -17,16 +17,20 @@
  */
 
  header{
-     background-color: alpha($color: #000000);
+     height: 100px;
+     padding: 20px 100px;
+     background-color: moccasin;
+ }
+
+ img{
+     height: 50px;
+     width: 500px;
  }
 
  .main{
-     height:700px;
+     height:1000px;
      width:1500px;
      text-align: center;
      position :absolute;
-     top :50%;
-     transform: translateY(-50%);
-     background-image: url("image1.jpeg");
-     opacity: 0.5;
+     padding:100px 0px;
  }

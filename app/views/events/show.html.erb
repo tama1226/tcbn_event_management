@@ -1,6 +1,6 @@
 <div　class="container">
   <div class="row">
-    <div class="col-sm-6 border">
+    <div class="col-sm-6">
       <h1>イベント詳細画面</h1>
 
       <p>イベント名: <%= @event.name %></p>
@@ -21,15 +21,17 @@
       <p>備考: <%= @event.remarks %></p>
     </div>
 
-    <div class="col-sm-6 border">
-      <h2>コメント一覧</h2>
-      <div id="comments_area">
-        <%= render partial: 'comments/index', locals: {comments: @comments} %>
-      </div>
+    <% if current_user.admin %>
+      <div class="col-sm-6">
+        <h2>コメント一覧</h2>
+        <div id="comments_area">
+          <%= render partial: 'comments/index', locals: {comments: @comments} %>
+        </div>
 
-      <% if user_signed_in?%>
-        <%= render partial: 'comments/form', locals: {comment: @comment, event: @event} %>
-      <% end %>
-    </div>
+        <% if user_signed_in?%>
+          <%= render partial: 'comments/form', locals: {comment: @comment, event: @event} %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
