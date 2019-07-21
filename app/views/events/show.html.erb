@@ -21,7 +21,7 @@
       <p>備考: <%= @event.remarks %></p>
     </div>
 
-    <% if current_user.admin %>
+    <% if current_user.try(:admin?) %>
       <div class="col-sm-6">
         <h2>コメント一覧</h2>
         <div id="comments_area">
