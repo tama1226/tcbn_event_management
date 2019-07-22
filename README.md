@@ -73,7 +73,7 @@ https://docs.google.com/spreadsheets/d/1IS8E5OrzzpLvDXdZKI_ssE_jK2RksbkbcjrD38aS
 ・mini_magick  
 ・ransack  
 ・kaminari  
-・simple_calender
-・rails_admin
-・cancancan
-・simple_from
+・simple_calender  
+・rails_admin  
+・cancancan  
+・simple_from  
