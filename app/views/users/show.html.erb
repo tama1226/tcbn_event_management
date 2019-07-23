@@ -4,4 +4,13 @@
 <p>電話番号: <%= @user.phone_number %></p><br>
 <p>メールアドレス: <%= @user.email %></p><br>
 
+<%= link_to "アカウント編集はこちら", edit_user_registration_path%><br>
 
+<% @user.events.each do |event| %>
+  <h2>予約詳細</h2><br>
+  <p>ご予約名：<%= event.name %>様</p>
+  <p>ご予約日：<%= event.start_on.strftime('%Y年%m月%d日') %></p>
+  <p>スタート時間：<%= event.start_on.strftime('%H時%M分') %></p>
+  <p>ゲーム数：<%= event.game %>ゲーム</p>
+  <p>レーン数：<%= event.lane %>レーン</p>
+<% end %>
