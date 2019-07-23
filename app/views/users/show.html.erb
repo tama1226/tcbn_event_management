@@ -4,7 +4,7 @@
 <p>電話番号: <%= @user.phone_number %></p><br>
 <p>メールアドレス: <%= @user.email %></p><br>
 
-<%= link_to "アカウント編集はこちら", edit_user_registration_path%><br>
+<%= link_to "アカウント編集はこちら", edit_user_registration_path %><br>
 
 <% @user.events.each do |event| %>
   <h2>予約詳細</h2><br>
