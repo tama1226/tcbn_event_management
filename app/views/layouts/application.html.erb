@@ -10,14 +10,15 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
+    <div class="mask">
+      <%= render 'layouts/header' %>
 
-    <div class="container">
+      <div class="container">
 
-      <p><%= notice %></p>
-      
-      <%= yield %>
+        <p><%= notice %></p>
+        
+        <%= yield %>
+      </div>
     </div>
-
   </body>
 </html>

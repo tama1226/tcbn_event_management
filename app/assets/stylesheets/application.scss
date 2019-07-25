@@ -19,7 +19,26 @@
  header{
      height: 100px;
      width: auto;
-     background-color: lightblue;
+     background-color: ghostwhite
+ }
+
+ body{
+     background-image: url("タチバナボウル背景画像.png");
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-attachment: fixed;
+     background-position: center center;
+ }
+
+ .mask{
+     /*背景を透過させるための擬似要素*/
+     height: auto;
+     background: rgba(255,255,255,0.6);
+ }
+
+ .main-page {
+     text-align: center;
+     line-height: 2.5em;
  }
 
  li{
@@ -29,7 +48,7 @@
  #logo {
     float: left;
     font-size: 1.7em;
-    color: #fff;
+    color: black;
     text-transform: uppercase;
     letter-spacing: -1px;
     padding-top: 9px;
