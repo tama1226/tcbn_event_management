@@ -1,15 +1,11 @@
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
 
   <h2>Log in</h2><br>
 
   <%= f.input :email, label: "メールアドレス", autofocus: true, autocomplete: "email", placeholder: "連絡の取れるメールアドレスを入力してください" %><br>
 
   <%= f.input :password, label: "パスワード", autocomplete: "new-password", placeholder: "6文字以上" %><br>
-
-  <% if devise_mapping.rememberable? %>
-    <%= f.check_box :remember_me %>
-    <%= f.label :remember_me %><br>
-  <% end %>
 
   <%= f.button :submit, "Log in", :class => "btn-primary" %><br>
 

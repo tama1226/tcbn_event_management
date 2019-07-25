@@ -10,34 +10,15 @@
   </head>
 
   <body>
-    <header>
-      <div class="float-left">
-        <h2>tcbn イベント管理</h2>
+    <div class="mask">
+      <%= render 'layouts/header' %>
+
+      <div class="container">
+
+        <p><%= notice %></p>
+        
+        <%= yield %>
       </div>
-
-      <div class="float-right">
-        <%= link_to 'HOME', root_path, class:'btn btn-primary' %>
-        <%= link_to 'イベント日程', events_path, class:'btn btn-info' %>
-          <% #ユーザーがログインしている場合 %>
-          <% if user_signed_in?%>
-          <%= link_to 'プロフィール', user_path(current_user.id), class:'btn btn-success' %>
-            <% #ユーザーが管理者かどうかで遷移ページを分ける %>
-            <% if current_user.try(:admin?) %>
-              <%= link_to "スタッフ管理ページ", "/admin", class:'btn btn-warning' %>
-            <% else %>
-              <%= link_to "ご予約のお問い合わせはこちら", "/contacts/new", class:'btn btn-primary' %>
-            <% end %>
-          <%= link_to "ログアウト！", destroy_user_session_path, method: :delete, class:'btn btn-danger' %>
-          <% else %>
-            <%= link_to "新規登録！", new_user_registration_path, class:'btn btn-success' %>
-            <%= link_to "ログイン！", new_user_session_path, class:'btn btn-success' %>
-          <% end %>
-      </div>
-    </header>
-
-      <p><%= notice %></p>
-      
-      <%= yield %>
-
+    </div>
   </body>
 </html>
