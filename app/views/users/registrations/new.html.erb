@@ -3,6 +3,13 @@
   
   <h2>Sign up</h2>
 
+  <% if notice %>
+　　<p><%= notice %></p>
+  <% end %>
+  <% if alert %>
+   <p><%= alert %></p>
+  <% end %>
+
   <%= f.input :name, label: "名前", placeholder: "20文字以内" %><br>
 
   <%= f.input :phone_number, label: "電話番号", placeholder: "-（ハイフン）なし、半角数字で入力してください" %><br>
