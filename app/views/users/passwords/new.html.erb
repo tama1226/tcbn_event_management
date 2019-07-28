@@ -3,6 +3,13 @@
 
   <h2>パスワード再設定フォーム</h2><br>
 
+  <% if notice %>
+　　<p><%= notice %></p>
+  <% end %>
+  <% if alert %>
+   <p><%= alert %></p>
+  <% end %>
+
   <%= f.input :email, label: "メールアドレス", autofocus: true, autocomplete: "email", placeholder: "連絡の取れるメールアドレスを入力してください" %><br>
 
   <%= f.button :submit, "パスワードを再設定します", :class => "btn-primary" %><br>
