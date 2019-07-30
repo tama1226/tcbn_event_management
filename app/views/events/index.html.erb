@@ -1,6 +1,6 @@
-<h1>イベント一覧画面</h1>
+<h1>タチバナボウル　イベント日程</h1>
 
-<h2>検索フォーム</h2>
+<h2>イベント検索フォーム</h2>
 <%= search_form_for @search, url: events_path do |f|%>
   <%= f.label :name_cont, 'イベント名' %>
   <%= f.search_field :name_cont %>
@@ -55,11 +55,12 @@
 <%= month_calendar events: @events do |date, events| %>
   <%= date %>
 
+  <% #詳細情報は「ログインユーザーが管理者」もしくは「種類がイベント」の時に表示！ %>
   <% events.each do |event| %>
-    <div>
-    <%= link_to event.name, event_path(event.id) %>
-    <%= link_to event.start_on.strftime('%H時%M分'), event_path(event.id) %>
-    </div>
+    <% if current_user.try(:admin?) || event.kind == "イベント" %>
+      <%= link_to event.name, event_path(event.id) %>
+      <%= link_to event.start_on.strftime('%H時%M分'), event_path(event.id) %>
+    <% end %>
   <% end %>
 <% end %>
 
