@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
       if @contact.save
         ContactMailer.contact_mail(@contact).deliver
-        redirect_to contacts_path, notice: 'メールが送信されました！'
+        redirect_to controller: 'events', action: 'index', notice: 'メールが送信されました！'
       else
         render :new
       end
