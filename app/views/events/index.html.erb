@@ -1,66 +1,69 @@
-<h1>タチバナボウル　イベント日程</h1>
+<div class = "event-main">
+  <h1>タチバナボウル　イベント日程</h1><br>
 
-<h2>イベント検索フォーム</h2>
-<%= search_form_for @search, url: events_path do |f|%>
-  <%= f.label :name_cont, 'イベント名' %>
-  <%= f.search_field :name_cont %>
+  <% if current_user.try(:admin?) %>
+    <%= link_to '新規イベント登録', new_event_path, class:'btn btn-success' %>
+  <% end %>
 
-  <%= f.label :start_on_eq, '日付' %>
-  <%= f.date_field :start_on_eq %>
+  <br>
 
-  <%= f.submit '検索' %>
-<% end %>
+  <table>
+    <tr>
+      <th>イベント名</th>
+      <th>種類</th>
+      <th>日付</th>
+      <th>曜日</th>
+      <th>開催時間</th>
+      <th>料金</th>
+      <th>レーン数</th>
+    </tr>
 
-<br>
+  <% @events.each do |event| %>
+    <tr>
+      <td><%= event.name %></td>
+      <td><%= event.kind %></td>
+      <td><%= event.start_on.strftime('%Y年%m月%d日') %></td>
+      <td><%= event.start_on.strftime('%a') %></td>
+      <td><%= event.start_on.strftime('%H時%M分') %></td>
+      <td><%= event.price %>円</td>
+      <td><%= event.lane %>レーン</td>
 
-<table>
-  <tr>
-    <th>イベント名</th>
-    <th>種類</th>
-    <th>日付</th>
-    <th>曜日</th>
-    <th>開催時間</th>
-    <th>料金</th>
-    <th>レーン数</th>
-  </tr>
+      <% if current_user.try(:admin?) %>
+        <td><%= link_to "編集", edit_event_path(event.id), class:'btn btn-primary' %></td>
+        <td><%= link_to '削除', event_path(event.id), method: :delete, data: { confirm: '削除していいですか？' }, class:'btn btn-danger' %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </table>
 
-<% @events.each do |event| %>
-  <tr>
-    <td><%= event.name %></td>
-    <td><%= event.kind %></td>
-    <td><%= event.start_on.strftime('%Y年%m月%d日') %></td>
-    <td><%= event.start_on.strftime('%a') %></td>
-    <td><%= event.start_on.strftime('%H時%M分') %></td>
-    <td><%= event.price %>円</td>
-    <td><%= event.lane %>レーン</td>
+  <br>
 
-    <% if current_user.try(:admin?) %>
-      <td><%= link_to "編集", edit_event_path(event.id) %></td>
-      <td><%= link_to '削除', event_path(event.id), method: :delete, data: { confirm: '削除していいですか？' } %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
+  <%= paginate @events %>
 
-<br>
+  <h2>イベント検索フォーム</h2>
+  <%= search_form_for @search, url: events_path do |f|%>
+    <%= f.label :name_cont, 'イベント名' %>
+    <%= f.search_field :name_cont %>
 
-<%= paginate @events %>
+    <%= f.label :start_on_eq, '日付' %>
+    <%= f.date_field :start_on_eq %>
 
-<br>
-<% if current_user.try(:admin?) %>
-  <%= link_to '新規イベント登録', new_event_path %>
-<% end %>
-<br>
+    <%= f.submit '検索' %>
+  <% end %>
+  <br>
+
+  </div>
 
 <%= month_calendar events: @events do |date, events| %>
-  <%= date %>
+  <%= date %><br>
 
   <% #詳細情報は「ログインユーザーが管理者」もしくは「種類がイベント」の時に表示！ %>
   <% events.each do |event| %>
     <% if current_user.try(:admin?) || event.kind == "イベント" %>
-      <%= link_to event.name, event_path(event.id) %>
-      <%= link_to event.start_on.strftime('%H時%M分'), event_path(event.id) %>
+      <%= link_to event.name, event_path(event.id) %><br>
+      <%= link_to event.start_on.strftime('%H時%M分'), event_path(event.id) %><br>
     <% end %>
   <% end %>
 <% end %>
+
 

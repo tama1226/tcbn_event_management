@@ -1,3 +1,4 @@
+<div class = "event-form">
 <%= form_with(model: @event, local: true) do |form| %>
     <% if @event.errors.any? %>
       <h2><%= @event.errors.count %>件のエラーがあります。</h2>
@@ -34,5 +35,5 @@
       
     <%= form.submit %>
   <% end %>
-  
-  <%= link_to 'イベント一覧', events_path %>
+
+</div>

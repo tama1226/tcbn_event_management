@@ -17,40 +17,71 @@
  */
 
  header{
-     height: 100px;
-     width: auto;
-     background-color: ghostwhite
+    height: 100px;
+    width: auto;
+    background-color: ghostwhite
  }
 
  body{
-     background-image: image-url('tachibana.png');
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-attachment: fixed;
-     background-position: center center;
+    background-image: image-url('tachibana.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
  }
 
  .mask{
-     /*背景を透過させるための擬似要素*/
-     height: auto;
-     background: rgba(255,255,255,0.6);
+    /*背景を透過させるための擬似要素*/
+    height: auto;
+    background: rgba(255,255,255,0.6);
+ }
+
+ table{
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+ }
+
+ table th{
+    padding:10px; 
+    background-color: aliceblue;
+    white-space: nowrap;
+ }
+
+ table td{
+    padding:10px; 
+    white-space: nowrap;
  }
 
  .main-page {
-     text-align: center;
-     line-height: 2.5em;
+    font-size: 1.7em;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 2em;
+ }
+
+ .event-main {
+  font-size: 1em;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 2em;
+}
+
+ .event-form{
+  font-size: 1em;
+  white-space: nowrap;
+  text-align: left;
+  line-height: 2em;
  }
 
  li{
-     padding: 5px 5px;
+    padding: 5px 5px;
  }
 
  #logo {
     float: left;
     font-size: 1.7em;
+    font-weight: bold;
     color: black;
     text-transform: uppercase;
-    letter-spacing: -1px;
-    padding-top: 9px;
-    font-weight: bold;
  }
