@@ -1,0 +1,32 @@
+<h3>以下の内容でよろしいですか？</h3>
+
+<%= form_with(model: @contact, local: true) do |form|%>
+  <%= form.hidden_field :reserved_name %>
+  <%= form.hidden_field :name %>
+  <%= form.hidden_field :phone_number %>
+  <%= form.hidden_field :email %>
+  <%= form.hidden_field :reserved_on %>
+  <%= form.hidden_field :game %>
+  <%= form.hidden_field :utilization_at %>
+  <%= form.hidden_field :number_of_people %>
+  <%= form.hidden_field :lane %>
+  <%= form.hidden_field :bus %>
+  <%= form.hidden_field :meeting_room %>
+  <%= form.hidden_field :remarks %>
+
+<p>ご予約名（団体名）: <%= @contact.reserved_name %>様</p>
+<p>お名前（代表者名): <%= @contact.name %>様</p>
+<p>電話番号: <%= @contact.phone_number %></p>
+<p>メールアドレス: <%= @contact.email %></p>
+<p>ご予約日: <%= @contact.reserved_on %></p>
+<p>ゲーム数 : <%= @contact.game %>ゲーム</p>
+<p>ご利用時間 : <%= @contact.utilization_at %>分</p>
+<p>人数 : <%= @contact.number_of_people %>人</p>
+<p>レーン数 : <%= @contact.lane %>レーン</p>
+<p>バスのご利用 : <%= @contact.bus ? '有り' : '無し' %></p>
+<p>ミーティングルームのご利用 : <%= @contact.meeting_room ? '有り' : '無し' %></p>
+<p>備考 : <%= @contact.remarks %></p>
+
+<%= form.submit "送信" %>
+
+<% end %>
