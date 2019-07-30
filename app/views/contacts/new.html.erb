@@ -1,4 +1,4 @@
-<%= simple_form_for(@contact) do |f| %>
+<%= simple_form_for(@contact, url: confirm_contacts_path) do |f| %>
   
   <h2>予約お問い合わせフォーム</h2><br>
 
@@ -26,5 +26,5 @@
 
   <%= f.input :remarks, label: "備考" %><br>
 
-  <%= f.button :submit, :class => "btn-primary" %>
+  <%= f.button :submit, label: "確認画面へ", :class => "btn-primary" %>
 <% end %>

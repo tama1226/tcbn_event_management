@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     sesssions: 'users/sessions'
   }
   resources :users, only: [:show]
-  resource :contacts, only: [:new, :create]
+  resource :contacts, only: [:new, :create] do
+    collection do
+      post :confirm
+    end
+  end
   resources :events do
     resources :comments
   end
