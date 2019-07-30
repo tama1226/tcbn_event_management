@@ -5,12 +5,11 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    sesssions: 'users/sessions'
   }
   resources :users, only: [:show]
-
   resource :contacts, only: [:new, :create]
-  
   resources :events do
     resources :comments
   end
