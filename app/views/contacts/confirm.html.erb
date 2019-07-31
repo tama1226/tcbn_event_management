@@ -27,6 +27,7 @@
 <p>ミーティングルームのご利用 : <%= @contact.meeting_room ? '有り' : '無し' %></p>
 <p>備考 : <%= @contact.remarks %></p>
 
+<%= form.submit "入力画面へ戻る", name: 'back' %>
 <%= form.submit "送信" %>
 
 <% end %>

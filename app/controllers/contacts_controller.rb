@@ -13,12 +13,18 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
+    #「戻る」ボタンの動作
+    if params[:back]
+      render :new
+    else
       if @contact.save
         ContactMailer.contact_mail(@contact).deliver
-        redirect_to controller: 'events', action: 'index', notice: 'メールが送信されました！'
+        redirect_to root_path
+        flash[:notice] = 'メールが送信されました！'
       else
         render :new
       end
+    end
   end
 
   def edit
@@ -32,6 +38,9 @@ class ContactsController < ApplicationController
 
   def confirm
     @contact = Contact.new(contact_params)
+    #バリデーションエラーを項目入力時に確認
+    return if @contact.valid?
+    render :new
   end
 
   private
