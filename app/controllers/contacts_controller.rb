@@ -13,6 +13,10 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
+    #「戻る」ボタンの動作
+    if params[:back]
+      render :new
+    else
       if @contact.save
         ContactMailer.contact_mail(@contact).deliver
         redirect_to root_path
@@ -20,6 +24,7 @@ class ContactsController < ApplicationController
       else
         render :new
       end
+    end
   end
 
   def edit
