@@ -1,14 +1,6 @@
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
   <h2>パスワード再設定フォーム</h2><br>
-
-  <% if notice %>
-　　<p><%= notice %></p>
-  <% end %>
-  <% if alert %>
-   <p><%= alert %></p>
-  <% end %>
 
   <%= f.input :email, label: "メールアドレス", autofocus: true, autocomplete: "email", placeholder: "連絡の取れるメールアドレスを入力してください" %><br>
 
