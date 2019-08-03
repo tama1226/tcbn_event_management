@@ -9,7 +9,8 @@
 <h3>お名前（代表者名): <%= @contact.name %>様</h3>
 <h3>電話番号: <%= @contact.phone_number %></h3>
 <h3>メールアドレス: <%= @contact.email %></h3>
-<h3>ご予約日: <%= @contact.reserved_on %></h3>
+<h3>ご予約日: <%= @contact.reserved_on.strftime('%Y年%m月%d日') %></h3>
+<h3>スタート時間: <%= @contact.reserved_on.strftime('%H時%M分') %></h3>
 <h3>ゲーム数 : <%= @contact.game %>ゲーム</h3>
 <h3>ご利用時間 : <%= @contact.utilization_at %>分</h3>
 <h3>人数 : <%= @contact.number_of_people %>人</h3>
