@@ -24,14 +24,6 @@
   margin: 20px auto;
 }
 
-.event-form{
-  font-size: 1em;
-  white-space: nowrap;
-  text-align: center;
-  line-height: 2em;
-
-}
-
 table{
   text-align: center;
   font-weight: bold;
@@ -48,4 +40,19 @@ table th{
 table td{
   padding:10px; 
   white-space: nowrap;
+}
+
+.event-form{
+  font-size: 1em;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 2em;
+}
+
+.event-show{
+  font-weight: bold;
+  line-height: 2em;
+  padding: 20px;
+  margin: 0 auto;
+  border: 3px dashed;
 }
