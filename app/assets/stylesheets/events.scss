@@ -10,6 +10,20 @@
   margin: 0 auto;
 }
 
+.event-main h1{
+  font-weight: bold;
+}
+
+.event-search{
+  max-width: 400px;
+  font-weight: bold;
+  line-height: 2em;
+  text-align: center;
+  border: 3px dashed;
+  padding: 20px;
+  margin: 20px auto;
+}
+
 .event-form{
   font-size: 1em;
   white-space: nowrap;
