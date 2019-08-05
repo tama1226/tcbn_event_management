@@ -36,23 +36,6 @@
     background: rgba(255,255,255,0.6);
  }
 
- table{
-    text-align: center;
-    font-weight: bold;
-    font-family: sans-serif;
- }
-
- table th{
-    padding:10px; 
-    background-color: aliceblue;
-    white-space: nowrap;
- }
-
- table td{
-    padding:10px; 
-    white-space: nowrap;
- }
-
  .main-page {
     font-size: 1.7em;
     white-space: nowrap;
@@ -63,20 +46,6 @@
  .main-page h1{
     font-weight: bold;
     color: red;
- }
-
- .event-main {
-  font-size: 1em;
-  white-space: nowrap;
-  text-align: center;
-  line-height: 2em;
-}
-
- .event-form{
-  font-size: 1em;
-  white-space: nowrap;
-  text-align: left;
-  line-height: 2em;
  }
 
  li{

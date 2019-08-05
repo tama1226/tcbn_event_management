@@ -1,24 +1,25 @@
-<h3>以下の内容でよろしいですか？</h3>
+<%= simple_form_for(@contact, local: true) do |f|%>
 
-<%= form_with(model: @contact, local: true) do |form|%>
-  <%= form.hidden_field :reserved_name %>
-  <%= form.hidden_field :name %>
-  <%= form.hidden_field :phone_number %>
-  <%= form.hidden_field :email %>
-  <%= form.hidden_field :reserved_on %>
-  <%= form.hidden_field :game %>
-  <%= form.hidden_field :utilization_at %>
-  <%= form.hidden_field :number_of_people %>
-  <%= form.hidden_field :lane %>
-  <%= form.hidden_field :bus %>
-  <%= form.hidden_field :meeting_room %>
-  <%= form.hidden_field :remarks %>
+<h3>以下の内容でよろしいですか？</h3>
+  <%= f.hidden_field :reserved_name %>
+  <%= f.hidden_field :name %>
+  <%= f.hidden_field :phone_number %>
+  <%= f.hidden_field :email %>
+  <%= f.hidden_field :reserved_on %>
+  <%= f.hidden_field :game %>
+  <%= f.hidden_field :utilization_at %>
+  <%= f.hidden_field :number_of_people %>
+  <%= f.hidden_field :lane %>
+  <%= f.hidden_field :bus %>
+  <%= f.hidden_field :meeting_room %>
+  <%= f.hidden_field :remarks %>
 
 <p>ご予約名（団体名）: <%= @contact.reserved_name %>様</p>
 <p>お名前（代表者名): <%= @contact.name %>様</p>
 <p>電話番号: <%= @contact.phone_number %></p>
 <p>メールアドレス: <%= @contact.email %></p>
-<p>ご予約日: <%= @contact.reserved_on %></p>
+<p>ご予約日: <%= @contact.reserved_on.strftime('%Y年%m月%d日') %></p>
+<p>スタート時間: <%= @contact.reserved_on.strftime('%H時%M分') %></p>
 <p>ゲーム数 : <%= @contact.game %>ゲーム</p>
 <p>ご利用時間 : <%= @contact.utilization_at %>分</p>
 <p>人数 : <%= @contact.number_of_people %>人</p>
@@ -27,7 +28,7 @@
 <p>ミーティングルームのご利用 : <%= @contact.meeting_room ? '有り' : '無し' %></p>
 <p>備考 : <%= @contact.remarks %></p>
 
-<%= form.submit "入力画面へ戻る", name: 'back' %>
-<%= form.submit "送信" %>
+<%= f.button :submit, "入力画面に戻る", name: 'back', :class => "btn-primary" %>
+<%= f.button :submit, "送信", :class => "btn-primary" %>
 
 <% end %>

@@ -1,11 +1,19 @@
 <div class = "event-main">
   <h1>タチバナボウル　イベント日程</h1><br>
 
-  <% if current_user.try(:admin?) %>
-    <%= link_to '新規イベント登録', new_event_path, class:'btn btn-success' %>
-  <% end %>
+  <div class = "event-search">
+    <h2>イベント検索フォーム</h2>
+    <%= search_form_for @search, url: events_path do |f|%>
+      <%= f.label :name_cont, 'イベント名' %>
+      <%= f.search_field :name_cont %><br>
 
-  <br>
+      <%= f.label :start_on_eq, '日付' %>
+      <%= f.date_field :start_on_eq %><br>
+
+      <%= f.submit '検索', :class => "btn-primary" %>
+    <% end %>
+    <br>
+  </div>
 
   <table>
     <tr>
@@ -29,28 +37,14 @@
       <td><%= event.lane %>レーン</td>
 
       <% if current_user.try(:admin?) %>
-        <td><%= link_to "編集", edit_event_path(event.id), class:'btn btn-primary' %></td>
+        <td><%= link_to "編集", edit_event_path(event.id), class:'btn btn-success' %></td>
         <td><%= link_to '削除', event_path(event.id), method: :delete, data: { confirm: '削除していいですか？' }, class:'btn btn-danger' %></td>
       <% end %>
     </tr>
   <% end %>
   </table>
 
-  <br>
-
   <%= paginate @events %>
-
-  <h2>イベント検索フォーム</h2>
-  <%= search_form_for @search, url: events_path do |f|%>
-    <%= f.label :name_cont, 'イベント名' %>
-    <%= f.search_field :name_cont %>
-
-    <%= f.label :start_on_eq, '日付' %>
-    <%= f.date_field :start_on_eq %>
-
-    <%= f.submit '検索' %>
-  <% end %>
-  <br>
 
   </div>
 

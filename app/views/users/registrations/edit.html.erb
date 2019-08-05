@@ -22,3 +22,10 @@
 
 <% end %>
 
+<div class = "user-delete">
+  <h3>アカウント削除</h3>
+  <p>下のボタンを押すと</p>
+  <p>削除の確認画面へ移ります</p>
+  <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn-danger"%>
+</div>
+

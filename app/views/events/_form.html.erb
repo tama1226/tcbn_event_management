@@ -1,39 +1,21 @@
-<div class = "event-form">
-<%= form_with(model: @event, local: true) do |form| %>
-    <% if @event.errors.any? %>
-      <h2><%= @event.errors.count %>件のエラーがあります。</h2>
-      <ul>
-        <% @event.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    <% end %>
-  
-    <%= form.label :name %>
-    <%= form.text_field :name , placeholder: "30文字以内"%><br>
-      
-    <%= form.label :kind %>
-    <%= form.select :kind, ['イベント','予約'] %><br>
-  
-    <%= form.label :start_on %>
-    <%= form.datetime_field :start_on %><br>
-  
-    <%= form.label :price %>
-    <%= form.text_field :price , placeholder: "半角数字で入力"%><br>
-  
-    <%= form.label :game %>
-    <%= form.select :game, [' ','1','2','3','4','5','6','7','8','9','10'] %><br>
-  
-    <%= form.label :lane %>
-    <%= form.text_field :lane , placeholder: "最大36レーン"%><br>
-  
-    <%= form.label :image %>
-    <%= form.file_field :image %><br>
-  
-    <%= form.label :remarks %>
-    <%= form.text_area :remarks, placeholder:"300文字以内" %><br>
-      
-    <%= form.submit %>
-  <% end %>
+<%= simple_form_for(@event, local: true) do |f| %>
 
-</div>
+  <%= f.input :name, label: "イベント名", placeholder: "30文字以内" %><br>
+
+  <%= f.input :kind, label: "種類", as: :select, collection: [ ['イベント', 'イベント'],[ '予約', '予約'] ], selected: ' '%><br>
+
+  <%= f.input :start_on, label: "開催日付" %><br>
+
+  <%= f.input :price, label: "料金", placeholder: "半角数字で入力" %><br>
+
+  <%= f.input :game, label: "ゲーム数", as: :select, collection: [ [' '],['1', '1'],[ '2', '2'],[ '3', '3'],[ '4', '4'],[ '5', '5'] ], selected: ' ' %><br>
+
+  <%= f.input :lane, label: "レーン数", placeholder: "最大36レーン" %><br>
+
+  <%= f.input :image, label: "画像", as: :file %><br>
+
+  <%= f.input :remarks, label: "備考", placeholder: "300文字以内" %><br>
+
+  <%= f.button :submit, label: "確認画面へ", :class => "btn-primary" %>
+
+  <% end %>

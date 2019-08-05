@@ -1,8 +1,9 @@
-<h1>あなたのプロフィール</h1><br>
+<div class = "user-prof">
+  <h1>Your Profile</h1><br>
 
-<p>名前: <%= @user.name %></p><br>
-<p>電話番号: <%= @user.phone_number %></p><br>
-<p>メールアドレス: <%= @user.email %></p><br>
+  <p>名前: <%= @user.name %></p><br>
+  <p>電話番号: <%= @user.phone_number %></p><br>
+  <p>メールアドレス: <%= @user.email %></p><br>
 
-<%= link_to "アカウント編集はこちら", edit_user_registration_path, class:'btn btn-success' %><br>
-
+  <%= link_to "アカウント編集はこちら", edit_user_registration_path, class:'btn btn-success' %><br>
+</div>
