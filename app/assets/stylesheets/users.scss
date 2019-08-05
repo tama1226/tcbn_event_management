@@ -1,6 +1,25 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-prof{
+  max-width: 600px;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  border: 3px solid;
+  padding: 10px;
+  margin: 30px auto;
+}
+
+.user-prof h1{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.user-prof p{
+  text-align: left;
+  border: 2px solid;
+}
 
 .user-delete{
   max-width: 500px;

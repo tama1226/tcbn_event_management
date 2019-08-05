@@ -8,7 +8,8 @@
           <li><%= link_to 'プロフィール', user_path(current_user.id), class:'btn btn-success' %></li>
             <% #ユーザーが管理者かどうかで遷移ページを分ける %>
             <% if current_user.try(:admin?) %>
-              <li><%= link_to "スタッフ管理ページ", "/admin", class:'btn btn-warning' %></li>
+              <li><%= link_to '新規イベント登録', new_event_path, class:'btn btn-primary' %></li>
+              <li><%= link_to "管理ページ", "/admin", class:'btn btn-warning' %></li>
             <% else %>
               <li><%= link_to "ご予約のお問い合わせはこちら", "/contacts/new", class:'btn btn-primary' %></li>
             <% end %>
