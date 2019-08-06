@@ -32,7 +32,8 @@
 
  .mask{
     /*背景を透過させるための擬似要素*/
-    height: auto;
+    min-height: 100vh;
+    height: 100%;
     background: rgba(255,255,255,0.6);
  }
 
