@@ -14,14 +14,14 @@
               lane: "18")
 end
 
-User.create(name: "admin",
+User.create(name: "adminuser",
             admin: "true",
-            email: "admin@example.com",
-            password: "password",
-            password_confirmation: "password")
+            email: "adminuser@example.com",
+            password: "adminpassword",
+            password_confirmation: "adminpassword")
 
-User.create(name: "sample",
+User.create(name: "sampleuser",
             admin: "false",
-            email: "sample@example.com",
-            password: "sample",
-            password_confirmation: "sample")
+            email: "sampleuser@example.com",
+            password: "sampleuser",
+            password_confirmation: "sampleuser")
