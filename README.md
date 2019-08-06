@@ -11,7 +11,7 @@
 ---
 言語・ミドルウェアのバージョン情報
 
-・Ruby 2.5.1  
+・Ruby 2.6.3
 ・Ruby on Rails 5.2.3  
 ・postgreSQL 11.3  
 
