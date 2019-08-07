@@ -5,6 +5,7 @@ class Contact < ApplicationRecord
              format: { with: /\A\d{10,11}\z/ }
   validates :email, presence: true, length: { minimum: 6 },
              format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+  validates :game, format: { with: /\A[0-9]+\z/}
   validates :number_of_people,
              format: { with: /\A[0-9]+\z/}
   validates :lane, presence: true, numericality: {less_than_or_equal_to: 36},
