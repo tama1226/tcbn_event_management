@@ -3,7 +3,7 @@ class ContactMailer < ApplicationMailer
     @contact = contact
 
     mail from: "#{@contact.email}",
-         to: "dic@example.com",
+         to: "tachibanabowl7883115@gmail.com",
          subject: "ご予約のお問い合わせ"
   end
 end
