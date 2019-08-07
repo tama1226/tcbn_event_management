@@ -4,7 +4,6 @@ class Contact < ApplicationRecord
   validates :phone_number, presence: true,
              format: { with: /\A\d{10,11}\z/ }
   validates :email, presence: true, length: { minimum: 6 },
-             uniqueness: true,
              format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   validates :number_of_people,
              format: { with: /\A[0-9]+\z/}
