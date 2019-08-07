@@ -4,7 +4,8 @@ class Event < ApplicationRecord
   validates :start_on, presence: true
   validates :price, presence: true,
              format: { with: /\A[0-9]+\z/}
-  validates :game, presence: true
+  validates :game, presence: true,
+             format: { with: /\A[0-9]+\z/}
   validates :lane, presence: true, numericality: {less_than_or_equal_to: 36},
              format: { with: /\A[0-9]+\z/}
   validates :remarks, length: { maximum: 300 }
