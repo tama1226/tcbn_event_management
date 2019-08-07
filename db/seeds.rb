@@ -9,6 +9,7 @@
 20.times do |n|
   Event.create(name: "event_name",
               kind: "イベント",
+              start_on: "#{Time.current}",
               price: "2000",
               game: "3",
               lane: "18")
@@ -20,8 +21,27 @@ User.create(name: "adminuser",
             password: "adminpassword",
             password_confirmation: "adminpassword")
 
+User.create(name: "admin",
+            admin: "true",
+            email: "admin@example.com",
+            password: "password",
+            password_confirmation: "password")
+
+User.create(name: "DIC",
+            admin: "true",
+            email: "dic@example.com",
+            password: "dicadmin",
+            password_confirmation: "dicadmin")
+
+
 User.create(name: "sampleuser",
             admin: "false",
             email: "sampleuser@example.com",
             password: "sampleuser",
             password_confirmation: "sampleuser")
+
+User.create(name: "dicsample",
+            admin: "false",
+            email: "dicsample@example.com",
+            password: "dicsample",
+            password_confirmation: "dicsample")
