@@ -25,9 +25,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+  def destroy
+    if current_user == resource && current_user.admin?
+      flash[:notice] == "管理者は削除できません！"
+      redirect_to user_path(resource)
+    else
+      super
+    end
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
