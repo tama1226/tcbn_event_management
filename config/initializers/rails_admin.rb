@@ -1,5 +1,20 @@
 RailsAdmin.config do |config|
 
+  config.model 'Event' do
+    edit do
+      field :name
+      field :kind do
+        partial "event_kind_partial"
+      end
+      field :start_on
+      field :price
+      field :game
+      field :lane
+      field :image
+      field :remarks
+    end
+  end
+
   ### Popular gems integration
 
   ## == Devise ==
