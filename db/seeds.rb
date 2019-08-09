@@ -15,33 +15,10 @@
               lane: "18")
 end
 
-User.create(name: "adminuser",
+User.create(name: "tamaki",
             admin: "true",
-            email: "adminuser@example.com",
-            password: "adminpassword",
-            password_confirmation: "adminpassword")
-
-User.create(name: "admin",
-            admin: "true",
-            email: "admin@example.com",
-            password: "password",
-            password_confirmation: "password")
-
-User.create(name: "DIC",
-            admin: "true",
-            email: "dic@example.com",
-            password: "dicadmin",
-            password_confirmation: "dicadmin")
+            email: "tamaki@example.com",
+            password: "hiro1226",
+            password_confirmation: "hiro1226")
 
 
-User.create(name: "sampleuser",
-            admin: "false",
-            email: "sampleuser@example.com",
-            password: "sampleuser",
-            password_confirmation: "sampleuser")
-
-User.create(name: "dicsample",
-            admin: "false",
-            email: "dicsample@example.com",
-            password: "dicsample",
-            password_confirmation: "dicsample")
