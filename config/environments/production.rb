@@ -65,7 +65,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: 'immense-forest-32445' }
+  config.action_mailer.default_url_options = { host: 'http://.immense-forest-32445.herokuapp.com' }
   ActionMailer::Base.raise_delivery_errors = false
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
