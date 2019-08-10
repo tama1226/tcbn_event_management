@@ -24,4 +24,60 @@ class Event < ApplicationRecord
   ransacker :start_on do
     Arel.sql "date(events.start_on)"
   end
+
+  #rails_adminのcreateアクションカスタマイズ
+  rails_admin do
+    create do
+      field :kind, :enum do
+        enum_method do
+          :kind_enum
+        end
+      end
+    end
+  end
+
+  rails_admin do
+    create do
+      field :name
+      field :start_on
+      field :price
+      field :game
+      field :lane
+      field :image
+      field :remarks
+      field :kind, :enum do
+        enum do
+          [['イベント','イベント'],['予約','予約']]
+        end
+      end
+    end
+  end
+
+  #rails_adminのeditアクションカスタマイズ
+  rails_admin do
+    edit do
+      field :kind, :enum do
+        enum_method do
+          :kind_enum
+        end
+      end
+    end
+  end
+
+  rails_admin do
+    edit do
+      field :name
+      field :start_on
+      field :price
+      field :game
+      field :lane
+      field :image
+      field :remarks
+      field :kind, :enum do
+        enum do
+          [['イベント','イベント'],['予約','予約']]
+        end
+      end
+    end
+  end
 end
