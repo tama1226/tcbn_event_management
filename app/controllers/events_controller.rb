@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :correct_referer, only:[:new,:edit]
   before_action :set_event, only:[:show,:edit,:update,:destroy]
 
   def index
@@ -56,5 +57,11 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:id])
+  end
+  #特定のアクションのURL直打ちを禁止する
+  def correct_referer
+    if request.referer.nil?
+      redirect_to events_path, notice: "このアクセス方法は許可されていません！！"
+    end
   end
 end
