@@ -1,0 +1,6 @@
+ja:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      html: '<abbr title="required" style = "color:red">[必須]</abbr>'
