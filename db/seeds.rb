@@ -5,20 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-20.times do |n|
-  Event.create(name: "event_name",
-              kind: "イベント",
-              start_on: "#{Time.current}",
-              price: "2000",
-              game: "3",
-              lane: "18")
-end
-
-User.create(name: "tamaki",
+User.create(name: "タチバナボウル",
             admin: "true",
-            email: "tamaki@example.com",
-            password: "hiro1226",
-            password_confirmation: "hiro1226")
+            email: ENV['EMAIL'],
+            password: ENV['PASSWORD'],
+            password_confirmation: ENV['PASSWORD_CONFIRMATION'])
 
 

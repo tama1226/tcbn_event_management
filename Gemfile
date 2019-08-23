@@ -22,6 +22,7 @@ gem 'simple_form'
 gem 'simple_calendar', '~> 2.0'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
